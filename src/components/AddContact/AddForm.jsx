@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function AddContact() {
     const navigate = useNavigate();
-    const [data, setData] = useState([]);
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -21,7 +20,7 @@ function AddContact() {
                 'Content-Type': 'application/json' 
             },
             body: JSON.stringify(formData),
-    })}
+        })}
 
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.name]: event.target.value });
